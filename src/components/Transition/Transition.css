@@ -1,0 +1,56 @@
+/* Page Transition Curtains adapted from modern-portfolio-main/components/Transition.tsx */
+.transition-curtains {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.transition-curtain {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  width: 100vw;
+  height: 100vh;
+  will-change: transform, width;
+  animation: curtain-reveal 0.65s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.transition-curtain--1 {
+  background: #14110f;
+  z-index: 30;
+  animation-delay: 0.15s;
+}
+
+.transition-curtain--2 {
+  background: #b8955a;
+  z-index: 20;
+  animation-delay: 0.35s;
+}
+
+.transition-curtain--3 {
+  background: #c0241c;
+  z-index: 10;
+  animation-delay: 0.55s;
+}
+
+@keyframes curtain-reveal {
+  0% {
+    transform: translateX(100%);
+    width: 100vw;
+  }
+  100% {
+    transform: translateX(0%);
+    width: 0%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transition-curtains {
+    display: none !important;
+  }
+}

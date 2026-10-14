@@ -1,0 +1,177 @@
+/* ---------- Design tokens (taken from the PDF) ---------- */
+:root {
+  --black: #080808;
+  --panel: #0f0d0b;
+  --cream: #f3ebdd;
+  --muted: #c9c0b1;
+  --gold: #b8955a;
+  --gold-line: rgba(184, 149, 90, 0.45);
+  --red: #c0241c;
+  --red-bright: #d63a2f;
+
+  --font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+  --space-section: clamp(4rem, 9vw, 7.5rem);
+  --space-gutter: clamp(1.25rem, 4vw, 3rem);
+  --max-width: 1200px;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ---------- Shared layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-gutter);
+}
+
+.section {
+  padding-block: var(--space-section);
+}
+
+.section + .section {
+  border-top: 1px solid rgba(184, 149, 90, 0.18);
+}
+
+.accent {
+  color: var(--red-bright);
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.frame {
+  border: 1px solid var(--gold-line);
+  background: var(--panel);
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caption {
+  margin-top: 0.6rem;
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.body-copy {
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+.body-copy + .body-copy {
+  margin-top: 1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html[data-motion-ready='true'] [data-reveal] {
+    opacity: 0;
+    transition:
+      opacity 1400ms cubic-bezier(0.25, 0.25, 0.25, 0.75),
+      transform 1400ms cubic-bezier(0.25, 0.25, 0.25, 0.75);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: transform, opacity;
+  }
+
+  /* Default / 'up' direction (offset 80px down) */
+  html[data-motion-ready='true'] [data-reveal]:not(.is-visible),
+  html[data-motion-ready='true'] [data-reveal='up']:not(.is-visible) {
+    transform: translateY(80px);
+  }
+
+  /* 'down' direction (offset -80px up) */
+  html[data-motion-ready='true'] [data-reveal='down']:not(.is-visible) {
+    transform: translateY(-80px);
+  }
+
+  /* 'left' direction (offset 80px right) */
+  html[data-motion-ready='true'] [data-reveal='left']:not(.is-visible) {
+    transform: translateX(80px);
+  }
+
+  /* 'right' direction (offset -80px left) */
+  html[data-motion-ready='true'] [data-reveal='right']:not(.is-visible) {
+    transform: translateX(-80px);
+  }
+
+  html[data-motion-ready='true'] [data-reveal].is-visible {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* ---------- Keyframe Utilities (from modern-portfolio) ---------- */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+

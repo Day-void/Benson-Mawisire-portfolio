@@ -1,0 +1,47 @@
+.content-plan {
+  padding: 1.2rem;
+}
+
+.content-plan__title {
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+
+.content-plan__scroll {
+  overflow-x: auto;
+}
+
+.content-plan__table {
+  width: 100%;
+  min-width: 36rem;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.content-plan__table th {
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.6rem 0.3rem;
+  border: 1px solid rgba(184, 149, 90, 0.3);
+}
+
+.content-plan__table td {
+  padding: 0.7rem 0.4rem;
+  border: 1px solid rgba(184, 149, 90, 0.3);
+}
+
+.content-plan__goals td {
+  color: var(--gold);
+  font-size: 0.8rem;
+}
+
+.content-plan__thumbs {
+  width: 100%;
+  margin-top: 1rem;
+}

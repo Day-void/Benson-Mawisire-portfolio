@@ -1,0 +1,35 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.about__signoff {
+  margin-top: 1.6rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--cream);
+}
+
+.about__art {
+  border-left: 1px solid var(--gold-line);
+  padding-left: clamp(1rem, 4vw, 3rem);
+}
+
+.about__art img {
+  width: 100%;
+  max-height: 32rem;
+  object-fit: contain;
+}
+
+@media (max-width: 800px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__art {
+    border-left: 0;
+    padding-left: 0;
+  }
+}

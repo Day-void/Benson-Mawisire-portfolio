@@ -1,0 +1,30 @@
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.section-heading__label {
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+
+.section-heading__title {
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.6vw, 3.6rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.section-heading__rule {
+  display: block;
+  width: 5rem;
+  height: 5px;
+  margin-top: 1.4rem;
+  background: var(--red);
+}

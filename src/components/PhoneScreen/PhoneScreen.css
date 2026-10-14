@@ -1,0 +1,141 @@
+.phone-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 25rem;
+  padding: 1.6rem 1rem 1.4rem;
+  border: 2px solid #55504a;
+  border-radius: 1.6rem;
+  background: #0b0a09;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.phone-screen__notch {
+  width: 40%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--gold);
+  opacity: 0.7;
+}
+
+.phone-screen__brand {
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.phone-screen__icon {
+  display: grid;
+  place-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+}
+
+.phone-screen__icon svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: none;
+  stroke: var(--cream);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.phone-screen__glyph {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.phone-screen__prompt {
+  min-height: 2.4em;
+}
+
+.phone-screen__field {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 4px;
+  background: #181613;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.phone-screen__field--big {
+  font-size: 1.4rem;
+}
+
+.phone-screen__field--big small {
+  display: block;
+  color: var(--cream);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.phone-screen__field--receipt strong {
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.phone-screen__presets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.phone-screen__presets span {
+  padding: 0.55rem 0;
+  border-radius: 4px;
+  background: #181613;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.phone-screen__presets .phone-screen__other {
+  grid-column: span 3;
+  font-weight: 500;
+}
+
+.phone-screen__methods {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.phone-screen__methods span {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0.8rem;
+  border-radius: 4px;
+  background: #181613;
+  color: var(--gold);
+}
+
+.phone-screen__methods .is-active {
+  border: 1px solid var(--gold);
+}
+
+.phone-screen__cta {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 4px;
+  background: var(--red);
+  color: #fff;
+  font-weight: 600;
+}
+
+.phone-screen__cta--gold {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.phone-screen__link {
+  color: var(--gold);
+}

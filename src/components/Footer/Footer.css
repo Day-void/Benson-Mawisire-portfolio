@@ -1,0 +1,13 @@
+.footer {
+  border-top: 1px solid var(--gold-line);
+  padding-block: 1.6rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
