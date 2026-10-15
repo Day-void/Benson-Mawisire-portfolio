@@ -1,8 +1,11 @@
-import { contact, profile } from '../../data/portfolioData'
+import { usePortfolioContent } from '../../context/PortfolioContext'
 import './Contact.css'
 
 function Contact() {
-  const { headline, paragraphs, email, phone, phoneHref, portfolio } = contact
+  const { content } = usePortfolioContent()
+  const contact = content?.contact || {}
+  const profile = content?.profile || {}
+  const { headline = [], paragraphs = [], email = '', phone = '', phoneHref = '', portfolio = '' } = contact
 
   return (
     <section className="section contact" id="contact" aria-labelledby="contact-title">
@@ -16,8 +19,8 @@ function Contact() {
             {headline[2]}
           </h2>
           <span className="contact__rule" aria-hidden="true" />
-          {paragraphs.map((text) => (
-            <p className="body-copy" data-reveal="right" key={text}>
+          {paragraphs.map((text, i) => (
+            <p className="body-copy" data-reveal="right" key={i}>
               {text}
             </p>
           ))}

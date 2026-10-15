@@ -1,6 +1,6 @@
 import SectionHeading from '../SectionHeading/SectionHeading'
 import ContentPlan from '../ContentPlan/ContentPlan'
-import { businessProject } from '../../data/portfolioData'
+import { usePortfolioContent } from '../../context/PortfolioContext'
 import logo from '../../assets/brand-logo.jpg'
 import postGrow from '../../assets/post-grow.jpg'
 import postSmart from '../../assets/post-smart.jpg'
@@ -8,7 +8,9 @@ import stickers from '../../assets/brand-stickers.jpg'
 import './BusinessProject.css'
 
 function BusinessProject() {
-  const { label, headline, accent, paragraphs } = businessProject
+  const { content } = usePortfolioContent()
+  const businessProject = content?.businessProject || {}
+  const { label = '', headline = [], accent = [], paragraphs = [] } = businessProject
 
   return (
     <section className="section project" id="work" aria-labelledby="project-title">

@@ -1,18 +1,32 @@
-import { profile } from '../../data/portfolioData'
+import { usePortfolioContent } from '../../context/PortfolioContext'
 import targetArt from '../../assets/hero-target.jpg'
 import ParticlesContainer from '../ParticlesContainer/ParticlesContainer'
 import './Hero.css'
 
 function Hero() {
+  const { content } = usePortfolioContent()
+  const profile = content?.profile || {}
+
   return (
     <section className="hero" id="top">
       <ParticlesContainer />
       <div className="container hero__grid">
         <div className="hero__copy">
           <h1 className="hero__name">
-            Benson
-            <br />
-            Mawisire
+            {profile.name ? (
+              profile.name.split(' ').map((part, i) => (
+                <span key={i}>
+                  {part}
+                  {i === 0 && <br />}
+                </span>
+              ))
+            ) : (
+              <>
+                Benson
+                <br />
+                Mawisire
+              </>
+            )}
           </h1>
           <span className="hero__rule" aria-hidden="true" />
           <p className="hero__title">{profile.title}</p>

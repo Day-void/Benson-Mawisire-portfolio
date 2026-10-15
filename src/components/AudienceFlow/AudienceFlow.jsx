@@ -1,8 +1,10 @@
-import { audienceFlow } from '../../data/portfolioData'
+import { usePortfolioContent } from '../../context/PortfolioContext'
 import './AudienceFlow.css'
 
 // Audience -> Insight -> Message -> Result. The last card is highlighted.
 function AudienceFlow() {
+  const { content } = usePortfolioContent()
+  const audienceFlow = content?.audienceFlow || []
   return (
     <div className="audience-flow">
       <h3 className="audience-flow__title">Audience to message flow</h3>

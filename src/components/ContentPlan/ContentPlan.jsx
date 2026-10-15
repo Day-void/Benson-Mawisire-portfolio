@@ -1,9 +1,11 @@
-import { contentPlan } from '../../data/portfolioData'
+import { usePortfolioContent } from '../../context/PortfolioContext'
 import thumbs from '../../assets/content-thumbs.jpg'
 import './ContentPlan.css'
 
 // Weekly content calendar: one column per day, plus the post thumbnails.
 function ContentPlan() {
+  const { content } = usePortfolioContent()
+  const contentPlan = content?.contentPlan || []
   return (
     <div className="content-plan frame">
       <h3 className="content-plan__title">Content plan overview</h3>

@@ -1,8 +1,10 @@
 import SectionHeading from '../SectionHeading/SectionHeading'
-import { processSteps } from '../../data/portfolioData'
+import { usePortfolioContent } from '../../context/PortfolioContext'
 import './Process.css'
 
 function Process() {
+  const { content } = usePortfolioContent()
+  const processSteps = content?.processSteps || []
   return (
     <section className="section process" id="process" aria-labelledby="process-title">
       <div className="container">

@@ -1,10 +1,13 @@
 import SectionHeading from '../SectionHeading/SectionHeading'
 import PhoneScreen from '../PhoneScreen/PhoneScreen'
-import { airtimeSteps, productConcept } from '../../data/portfolioData'
+import { usePortfolioContent } from '../../context/PortfolioContext'
 import './ProductConcept.css'
 
 function ProductConcept() {
-  const { label, headline, middle, accent, paragraphs, badge } = productConcept
+  const { content } = usePortfolioContent()
+  const productConcept = content?.productConcept || {}
+  const airtimeSteps = content?.airtimeSteps || []
+  const { label = '', headline = [], middle = '', accent = '', paragraphs = [], badge = '' } = productConcept
 
   return (
     <section className="section concept" id="concept" aria-labelledby="concept-title">

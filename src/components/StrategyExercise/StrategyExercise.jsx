@@ -2,11 +2,13 @@ import SectionHeading from '../SectionHeading/SectionHeading'
 import AudienceFlow from '../AudienceFlow/AudienceFlow'
 import SostacGrid from '../SostacGrid/SostacGrid'
 import CreativeConcept from '../CreativeConcept/CreativeConcept'
-import { strategyExercise } from '../../data/portfolioData'
+import { usePortfolioContent } from '../../context/PortfolioContext'
 import './StrategyExercise.css'
 
 function StrategyExercise() {
-  const { label, headline, accent, slogan, paragraphs, disclaimer } = strategyExercise
+  const { content } = usePortfolioContent()
+  const strategyExercise = content?.strategyExercise || {}
+  const { label = '', headline = [], accent = '', slogan = '', paragraphs = [], disclaimer = '' } = strategyExercise
 
   return (
     <section className="section strategy" id="strategy" aria-labelledby="strategy-title">

@@ -1,10 +1,12 @@
-import { creativeConcept } from '../../data/portfolioData'
+import { usePortfolioContent } from '../../context/PortfolioContext'
 import tent from '../../assets/xash-tent.jpg'
 import './CreativeConcept.css'
 
 // Left: the poster copy rebuilt as text. Right: the table-tent mockup photo.
 function CreativeConcept() {
-  const { brand, headline, subline, points, footer } = creativeConcept
+  const { content } = usePortfolioContent()
+  const creativeConcept = content?.creativeConcept || {}
+  const { brand = '', headline = '', subline = '', points = [], footer = '' } = creativeConcept
 
   return (
     <div className="creative">

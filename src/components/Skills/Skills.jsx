@@ -1,8 +1,12 @@
 import SectionHeading from '../SectionHeading/SectionHeading'
-import { skills, workflow } from '../../data/portfolioData'
+import { usePortfolioContent } from '../../context/PortfolioContext'
 import './Skills.css'
 
 function Skills() {
+  const { content } = usePortfolioContent()
+  const skills = content?.skills || []
+  const workflow = content?.workflow || []
+
   return (
     <section className="section skills" id="skills" aria-labelledby="skills-title">
       <div className="container">
@@ -13,8 +17,8 @@ function Skills() {
         </SectionHeading>
 
         <ul className="skills__grid" data-reveal-stagger>
-          {skills.map((skill) => (
-            <li className="skills__item" key={skill}>
+          {skills.map((skill, i) => (
+            <li className="skills__item" key={i}>
               {skill}
             </li>
           ))}

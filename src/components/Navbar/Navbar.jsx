@@ -1,8 +1,11 @@
 import { useState } from 'react'
-import { navLinks, profile } from '../../data/portfolioData'
+import { usePortfolioContent } from '../../context/PortfolioContext'
 import './Navbar.css'
 
 function Navbar() {
+  const { content } = usePortfolioContent()
+  const profile = content?.profile || {}
+  const navLinks = content?.navLinks || []
   const [open, setOpen] = useState(false)
 
   const closeMenu = () => setOpen(false)
@@ -12,7 +15,7 @@ function Navbar() {
       <div className="container navbar__inner">
         <a href="#top" className="navbar__brand" onClick={closeMenu}>
           <span className="navbar__mark" aria-hidden="true" />
-          {profile.name}
+          {profile.name || 'Benson Mawisire'}
         </a>
 
         <button
